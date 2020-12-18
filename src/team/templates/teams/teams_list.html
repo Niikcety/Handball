@@ -1,0 +1,31 @@
+{% extends "match/base.html" %}{% block content %}
+
+<h1 style="text-align:center;">Leaderboard</h1>
+
+
+<ul>
+    
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Team Name</th>
+            <th scope="col">Wins</th>
+            <th scope="col">Info</th>
+
+          </tr>
+        </thead>
+        <tbody>
+        {% for team in teams_list %}
+
+          <tr>
+            <td>{{ team.name }}</td>
+            <td>{{ team.wins }}</td>
+            <td><a href="{% url 'team_detail' team.id  %}"><button type="button" class="btn btn-outline-secondary">View</button></a></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      
+</ul>
+
+{% endblock %}

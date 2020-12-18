@@ -1,0 +1,28 @@
+{% extends "match/base.html" %}
+
+{% block content %}
+<h1 style="text-align:center;">{{ match.home_team.name }} vs {{ match.away_team.name }} </h1>
+<ul>
+    
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Home Team</th>
+            <th scope="col">Away Team</th>
+            <th scope="col">Home Score</th>
+            <th scope="col">Away Score</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ match.home_team.name }}</td>
+                <td>{{ match.away_team.name }}</td>
+                <td>{{ match.home_score }}</td>
+                <td>{{ match.away_score }}</td>
+              </tr>
+        </tbody>
+      </table>
+      
+</ul>
+
+{% endblock %}

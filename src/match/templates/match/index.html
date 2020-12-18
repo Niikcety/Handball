@@ -1,0 +1,7 @@
+{% extends "match/base.html" %}
+
+{% block content %}
+<a href="{% url 'list_teams' %}"><button type="button" class="btn btn-primary btn-lg btn-block">View Leaderboard</button></a>
+<a href="{% url 'list_matches' %}"><button type="button" class="btn btn-primary btn-lg btn-block">View Matches</button></a>
+<a href="{% url 'match_create' %}"><button type="button" class="btn btn-primary btn-lg btn-block">Create Matches</button></a>
+{% endblock %}

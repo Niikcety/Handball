@@ -1,0 +1,33 @@
+{% extends "match/base.html" %}{% block content %}
+
+<h1 style="text-align:center;">Matches page</h1>
+
+
+<ul>
+    
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Home Team</th>
+            <th scope="col">Away Team</th>
+            <th scope="col">Home Score</th>
+            <th scope="col">Away Score</th>
+            <th score="col">Match Info</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for match in matches_list %}
+          <tr>
+            <td>{{ match.home_team.name }}</td>
+            <td>{{ match.away_team.name }}</td>
+            <td>{{ match.home_score }}</td>
+            <td>{{ match.away_score }}</td>
+            <td><a href="{% url 'match_detail' match.id %}"><button type="button" class="btn btn-outline-secondary">View</button></a></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      
+</ul>
+
+{% endblock %}

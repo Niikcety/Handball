@@ -1,0 +1,34 @@
+{% extends "match/base.html" %}
+
+{% block content %}
+{% if wins != 1 %}
+<h1 style="text-align:center;">{{ team_name }} has {{ wins }} wins.</h1>
+{% else %}
+<h1 style="text-align:center;">{{ team_name}} has 1 win.</h1>
+{% endif %}
+<h2 style="text-align:center;">Opponents</h2>
+<ul>
+    
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Team Name</th>
+          <th scope="col">Direct Matches</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for opponent in opponents %}  
+          <tr>
+            <td>{{ opponent.name }}</td>
+            <td><a href="{% url 'direct_matches' home_team_id  opponent.away_team_id %}"><button type="button" class="btn btn-outline-secondary">View</button></a></td>
+          </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+    
+</ul>
+
+
+
+
+{% endblock %}
