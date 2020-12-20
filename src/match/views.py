@@ -58,7 +58,7 @@ def match_create(request):
     if request.method == 'POST':
         form = CreateForm(request.POST)
         match_info = request.POST.get('match_info').split('\n')
-        queue = Queue(maxsize=1000)
+        queue = Queue(maxsize=50)
         thread_read = threading.Thread(target=tokenize_matches, args=[queue, match_info])
         thread_write = threading.Thread(target=save_matches, args=[queue])
         thread_read.start()
